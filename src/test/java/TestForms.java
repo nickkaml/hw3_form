@@ -21,7 +21,7 @@ public class TestForms {
     }
 
     @Test
-    void StudentForm () {
+    void studentForm () {
 
         String firstName = "Иван";
         String lastName = "Иванов";
