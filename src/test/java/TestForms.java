@@ -21,7 +21,7 @@ public class TestForms {
     }
 
     @Test
-    void studentForm () {
+    void studentForm() {
 
         String firstName = "Иван";
         String lastName = "Иванов";
@@ -31,34 +31,32 @@ public class TestForms {
 
 
         open("/automation-practice-form");
-        //executeJavaScript("$('#adplus-anchor').remove()");
-        executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
 
 
-
-        $("#firstName").val(firstName);
-        $("#lastName").val(lastName);
-        $("#userEmail").val(email);
+        $("#firstName").setValue(firstName);
+        $("#lastName").setValue(lastName);
+        $("#userEmail").setValue(email);
 
         $(byText("Male")).click();
 
-        $("#userNumber").val(phoneNumber);
+        $("#userNumber").setValue(phoneNumber);
 
         $("#dateOfBirthInput").click();
         $(".react-datepicker__year-select").selectOption("2000");
         $(".react-datepicker__month-select").selectOption("January");
         $(byText("1")).click();
 
-        $("#subjectsInput").val("English").pressEnter();
-        $("#subjectsInput").val("Maths").pressEnter();
+        $("#subjectsInput").setValue("English").pressEnter();
+        $("#subjectsInput").setValue("Maths").pressEnter();
 
         $(byText("Sports")).click();
         $(byText("Music")).click();
 
         $("#uploadPicture").uploadFile(new File("src/test/resources/picture.jpeg"));
 
-        $("#currentAddress").val(address);
+        $("#currentAddress").setValue(address);
         $("#state").click();
         $("#state").$(byText("Rajasthan")).click();
         $("#city").click();
